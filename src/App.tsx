@@ -11,6 +11,7 @@ import Account from './Pages/Account'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
 import './App.css'
+import AuthPage from './Pages/Authpage'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/merch' element={<Merch />} />
         <Route path='/find-in-store' element={<FindInStore />} />
         <Route path='/account' element={<Account />} />
+        <Route path='/auth' element={<AuthPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,6 +1,7 @@
 import React from 'react'
 import type { ProductType } from '../data/Product'
 import CartContext from '../context/cartContext.ts'
+import Stars from './Stars'
 
 const ProductCard = ({ data }: { data: ProductType }) => {
   const [count, setCount] = React.useState(0)
@@ -30,20 +31,20 @@ const ProductCard = ({ data }: { data: ProductType }) => {
       <div className="p-5">
         
         {/* Product Name */}
-        <h2 className="text-xl font-extrabold uppercase tracking-wide">
+        <h2 className="text-xl font-bold uppercase tracking-wide">
           {data.name}
         </h2>
 
-        {/* Description */}
-        <p className="text-gray-400 text-sm mt-2 line-clamp-2">
-          {data.description}
-        </p>
-
         {/* Price */}
         <div className="mt-4 flex items-center gap-3">
-          <span className="text-2xl font-bold text-white">
+          <span className="text-xl  text-white">
             ${data.price}
           </span>
+        </div>
+
+        {/* Stars */}
+        <div className="mt-2 flex justify-start">
+          <Stars rating={4.5} />
         </div>
 
         {/* Quantity Controls */}

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
+import {AuthPage} from "../Pages/Authpage"
 
 const Navbar: React.FC = () => {
   const linkClass = ({ isActive }: { isActive: boolean }) =>
@@ -67,10 +68,10 @@ const Navbar: React.FC = () => {
           {/* Icons */}
           <div className="flex items-center gap-5 text-xl">
             <NavLink
-              to="/account"
+              to="/auth"
               className="text-zinc-300 hover:text-red-600 transition"
             >
-              <FiUser />
+              <FiUser  />
             </NavLink>
 
             <button className="text-zinc-300 hover:text-red-600 transition">
