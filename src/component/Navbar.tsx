@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
-import {AuthPage} from "../Pages/Authpage"
+import CartContext from "../context/cartContext";
 
 const Navbar: React.FC = () => {
+  const { cartItems, setIsCartOpen } = useContext(CartContext);
+  const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `relative font-bold text-[13px] uppercase tracking-[0.12em] transition-all duration-300 py-2
     after:content-[''] after:absolute after:left-0 after:bottom-0
@@ -78,8 +81,13 @@ const Navbar: React.FC = () => {
               <FiSearch />
             </button>
 
-            <button className="text-zinc-300 hover:text-red-600 transition">
+            <button onClick={() => setIsCartOpen(true)} className="relative text-zinc-300 hover:text-red-600 transition">
               <FiShoppingCart />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </button>
           </div>
 

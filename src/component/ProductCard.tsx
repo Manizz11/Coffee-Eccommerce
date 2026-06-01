@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import type { ProductType } from '../data/Product'
-import CartContext from '../context/cartContext.ts'
+import CartContext from '../context/cartContext'
 import Stars from './Stars'
 
 const ProductCard = ({ data }: { data: ProductType }) => {
@@ -19,13 +20,15 @@ const ProductCard = ({ data }: { data: ProductType }) => {
     <div className="bg-black text-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
       
       {/* Product Image */}
-      <div className="overflow-hidden">
-        <img
-          src={data.image}
-          alt={data.name}
-          className="w-full h-[320px] object-cover hover:scale-105 transition duration-500"
-        />
-      </div>
+      <Link to={`/product/${data.id}`}>
+        <div className="overflow-hidden cursor-pointer">
+          <img
+            src={data.image}
+            alt={data.name}
+            className="w-full h-[320px] object-cover hover:scale-105 transition duration-500"
+          />
+        </div>
+      </Link>
 
       {/* Product Info */}
       <div className="p-5">

@@ -59,7 +59,11 @@ const Subscribe = () => {
 
         {/* Card 1 */}
         <div className="text-center">
-          <FaMoneyBillWave className="text-4xl text-red-600 mb-4 mx-auto w-28 h-28" />
+           <img
+            src="/about1.png"
+            alt="Sustainable Farming"
+            className=" ml-14 w-40 h-40 object-contain mb-6"
+          />
           <p className="font-bold text-2xl mb-2">BUY MORE, SAVE MORE</p>
 
 
@@ -71,7 +75,11 @@ const Subscribe = () => {
 
         {/* Card 2 */}
         <div className="text-center">
-          <TbTruckDelivery className="text-4xl text-red-600 mb-4 mx-auto w-28 h-28" />
+           <img
+            src="/delivery.png"
+            alt=""
+            className=" ml-14 w-40 h-40 object-contain mb-6"
+          />
           <p className="font-bold text-2xl mb-2">
             FREE SHIPPING FOR SOCIETY MEMBERS
           </p>
@@ -83,7 +91,11 @@ const Subscribe = () => {
 
         {/* Card 3 */}
         <div className="text-center">
-          <FaBoxOpen className="text-4xl text-red-600 mb-4 mx-auto w-28 h-28" />
+          <img
+            src="/Group.png"
+            alt=""
+            className=" ml-14 w-40 h-40 object-contain mb-6"
+          />
           <p className="font-bold text-2xl mb-2">FLEXIBLE SHIPMENTS</p>
           <p className="text-white/70 leading-relaxed mt-3">
             Get it when you want it. Swap or cancel anytime.
@@ -92,7 +104,11 @@ const Subscribe = () => {
 
         {/* Card 4 */}
         <div className="text-center">
-          <BsBagXFill className="text-4xl text-red-600 mb-4 mx-auto w-28 h-28" />
+           <img
+            src="/bag.png"
+            alt=""
+            className=" ml-14 w-40 h-40 object-contain mb-6"
+          />
           <p className="font-bold text-2xl mb-2">EXCLUSIVE ACCESS</p>
 
 
