@@ -32,6 +32,7 @@ const App = () => {
         <Route path='/account' element={<Account />} />
         <Route path='/auth' element={<AuthPage />} />
         <Route path='/cart' element={<Cart />} />
+        
         <Route path='/product/:id' element={<ProductDetails />} />
 
       </Routes>

@@ -42,7 +42,7 @@ const ProductContent = ({ view = "scroll", filter }: { view?: string; filter?: "
           style={{ scrollbarWidth: "none" }}
         >
           {sorted.slice(0, 10).map((product) => (
-            <div key={product.id} className="min-w-[30%] flex-shrink-0">
+      <div className="min-w-[85%] sm:min-w-[45%] lg:min-w-[30%] flex-shrink-0">
               <ProductCard data={product} />
             </div>
           ))}
