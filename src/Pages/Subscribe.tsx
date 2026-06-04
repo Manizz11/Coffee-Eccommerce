@@ -106,6 +106,25 @@ const Subscribe = () => {
           </tr>
           </table>
       </div>
+      <div className="w-full mt-6 bg-red-600 py-6 px-4 flex flex-col items-center gap-4">
+  
+  <h1 className="uppercase text-black text-center font-display font-bold text-lg">
+    STAY BOLD, STAY CAFFEINATED. SIGN UP AND SAVE 20% OFF YOUR FIRST ORDER
+  </h1>
+
+  <div className="flex w-full max-w-md">
+    <input
+      type="text"
+      placeholder="Enter Your Email Address"
+      className="flex-1 bg-white text-black placeholder:text-gray-500 text-sm px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+    />
+
+    <button className="bg-black text-white px-4 uppercase hover:bg-red-700 transition">
+      Sign Up
+    </button>
+  </div>
+
+</div>
     </>
   );
 };
