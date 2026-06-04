@@ -12,7 +12,7 @@ import Navbar from './component/Navbar'
 import Footer from './component/Footer'
 import CartDrawer from './component/CartDrawer'
 import './App.css'
-import AuthPage from './Pages/Authpage'
+import AuthPage from './Pages/AuthPage'
 import Cart from './Pages/Cart'
 import ProductDetails from './Pages/ProductDetails'
 
