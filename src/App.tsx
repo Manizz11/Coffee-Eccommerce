@@ -7,7 +7,7 @@ import Coffee from './Pages/Coffee'
 import Merch from './Pages/Merch'
 import Subscribe from './Pages/Subscribe'
 import FindInStore from './Pages/FindInStore'
-import Account from './Pages/Account'
+
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
 import CartDrawer from './component/CartDrawer'
@@ -29,7 +29,7 @@ const App = () => {
         <Route path='/subscribe' element={<Subscribe />} />
         <Route path='/merch' element={<Merch />} />
         <Route path='/find-in-store' element={<FindInStore />} />
-        <Route path='/account' element={<Account />} />
+       cls
         <Route path='/auth' element={<AuthPage />} />
         <Route path='/cart' element={<Cart />} />
         

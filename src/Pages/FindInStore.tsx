@@ -4,7 +4,7 @@ import { GrLocationPin } from "react-icons/gr";
 
 const FindInStore = () => {
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    <div className="min-h-screen bg-black text-white p-6 mb-15">
 
      
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-10">

@@ -5,9 +5,12 @@ const About = () => {
     <div className="bg-black text-white py-16 px-6 pt-24">
       
       {/* Main Heading */}
-      <h1 className="text-4xl md:text-6xl font-bold text-center mb-12">
+      <div className="relative max-w-7xl mx-auto mb-20">
+        <img src="/about4.webp" alt="" className=" w-full mx-auto mb-8 h-[500px] w-[500px]" />
+      <h1 className="text-4xl md:text-6xl font-bold text-start mb-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         REBELLIOUS BY NATURE
       </h1>
+      </div>
 
       {/* Intro Section */}
       <div className="max-w-4xl mx-auto text-center mb-20">

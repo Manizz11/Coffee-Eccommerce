@@ -48,10 +48,10 @@ const Navbar: React.FC = () => {
         {/* Desktop: Right Links + Icons */}
         <div className="hidden lg:flex items-center justify-between w-[40%]">
           <div className="flex items-center gap-8">
-            <NavLink to="/store" className={linkClass}>Store</NavLink>
+            <NavLink to="/find-in-store" className={linkClass}>Find in Store</NavLink>
             <NavLink to="/blog" className={linkClass}>Blog</NavLink>
             <NavLink to="/about" className={linkClass}>About</NavLink>
-             <NavLink to="/find-in-store" className={linkClass}>Find in Store</NavLink>
+             
 
           </div>
           <div className="flex items-center gap-5 text-xl">

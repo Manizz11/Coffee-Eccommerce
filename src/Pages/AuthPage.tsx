@@ -1,84 +1,61 @@
-import React, { useState } from "react";
+import React from 'react'
+import Signup from '../component/Signup'
+import Login from '../component/Login'
+import { useNavigate } from 'react-router-dom'
 
-const AuthPage = () => {
-  const [isLogin, setIsLogin] = useState(true);
+type UserForm = {
+  fullName: string;
+  email: string;
+  password: string;
+}
+
+type LoginForm = {
+  email: string;
+  password: string;
+}
+
+const Authpage = () => {
+  const [currentPage, setCurrentPage] = React.useState("signup");
+  const navigate = useNavigate()
+
+  const handleSignup = (formdata: UserForm) => {
+    const stored = localStorage.getItem("user");
+    const users: UserForm[] = stored ? JSON.parse(stored) : [];
+
+    const existingUser = users.find((u) => u.email === formdata.email);
+    if (existingUser) {
+      alert("User already exists");
+      setCurrentPage("login");
+      return;
+    }
+
+    users.push(formdata);
+    localStorage.setItem("user", JSON.stringify(users));
+    localStorage.setItem("currentUser", JSON.stringify(formdata));
+    setCurrentPage("login");
+  };
+
+  const handleLogin = (data: LoginForm) => {
+    const stored = localStorage.getItem("user");
+    const users: UserForm[] = stored ? JSON.parse(stored) : [];
+    const user = users.find((u) => u.email === data.email && u.password === data.password);
+    if (user) {
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      alert(`Welcome back, ${user.fullName}!`);
+      navigate("/");
+    } else {
+      alert("Invalid email or password.");
+    }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white px-4">
-
-      {/* Card */}
-      <div className="w-full max-w-md bg-gradient-to-b from-gray-900 to-black rounded-2xl shadow-2xl p-8 border border-red-600/30">
-
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-widest text-red-500">
-            {isLogin ? "WELCOME BACK" : "JOIN US"}
-          </h1>
-          <p className="text-white/60 text-sm mt-2">
-            {isLogin
-              ? "Sign in to continue your coffee journey"
-              : "Create an account and explore premium coffee"}
-          </p>
-        </div>
-
-        {/* Form */}
-        <form className="space-y-4">
-
-          {/* Name */}
-          {!isLogin && (
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full px-4 py-3 rounded-lg bg-black/60 border border-gray-700 focus:border-red-500 outline-none transition"
-            />
-          )}
-
-          {/* Email */}
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="w-full px-4 py-3 rounded-lg bg-black/60 border border-gray-700 focus:border-red-500 outline-none transition"
-          />
-
-          {/* Password */}
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full px-4 py-3 rounded-lg bg-black/60 border border-gray-700 focus:border-red-500 outline-none transition"
-          />
-
-          {/* Confirm Password */}
-          {!isLogin && (
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              className="w-full px-4 py-3 rounded-lg bg-black/60 border border-gray-700 focus:border-red-500 outline-none transition"
-            />
-          )}
-
-          {/* Button */}
-          <button
-            type="submit"
-            className="w-full mt-2 py-3 rounded-lg bg-red-600 hover:bg-red-700 transition font-bold tracking-wide"
-          >
-            {isLogin ? "LOGIN" : "SIGN UP"}
-          </button>
-        </form>
-
-        {/* Switch */}
-        <div className="text-center mt-6 text-sm text-white/60">
-          {isLogin ? "Don't have an account?" : "Already have an account?"}
-
-          <button
-            onClick={() => setIsLogin(!isLogin)}
-            className="ml-2 text-red-500 hover:underline font-semibold"
-          >
-            {isLogin ? "Sign up" : "Login"}
-          </button>
-        </div>
-      </div>
+    <div>
+      {currentPage === "signup"
+        ? <Signup onSignup={handleSignup} onSwitch={() => setCurrentPage("login")} />
+        : <Login onLogin={handleLogin} onSwitch={() => setCurrentPage("signup")} />
+      }
     </div>
   );
 };
 
-export default AuthPage;
+export default Authpage;
