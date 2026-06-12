@@ -60,7 +60,7 @@ const Footer = () => {
   {/* COPYRIGHT (CENTER UNDER MIDDLE) */}
   <div className="text-center md:col-span-2">
     <p className="text-gray-400 text-sm">
-      © 2026, Death Wish Coffee. All rights reserved.
+      © 2026, Death Wish Coffee. All rights reserved.  check
     </p>
   </div>
 
