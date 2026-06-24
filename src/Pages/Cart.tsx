@@ -1,11 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
 import CartContext from '../context/cartContext'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { MdDelete } from "react-icons/md";
 
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext)
+  const navigate = useNavigate()
 
   const total = cartItems.reduce((sum, item) => sum + item.totalPrice, 0)
 
@@ -77,7 +78,7 @@ const Cart = () => {
           <div className="text-right">
             <p className="text-white/60 text-sm uppercase tracking-wide">Order Total</p>
             <p className="text-3xl font-bold mt-1">${total}</p>
-            <button className="mt-4 bg-red-600 hover:bg-red-700 transition px-10 py-3 font-bold uppercase tracking-wide">
+            <button onClick={() => navigate('/checkout')} className="mt-4 bg-red-600 hover:bg-red-700 transition px-10 py-3 font-bold uppercase tracking-wide">
               Checkout
             </button>
           </div>

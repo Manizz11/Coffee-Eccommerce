@@ -14,6 +14,7 @@ import CartDrawer from './component/CartDrawer'
 import './App.css'
 import AuthPage from './Pages/AuthPage'
 import Cart from './Pages/Cart'
+import Checkout from './Pages/Checkout'
 import ProductDetails from './Pages/ProductDetails'
 
 const App = () => {
@@ -29,9 +30,9 @@ const App = () => {
         <Route path='/subscribe' element={<Subscribe />} />
         <Route path='/merch' element={<Merch />} />
         <Route path='/find-in-store' element={<FindInStore />} />
-       cls
         <Route path='/auth' element={<AuthPage />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
         
         <Route path='/product/:id' element={<ProductDetails />} />
 

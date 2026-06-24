@@ -82,7 +82,10 @@ const CartDrawer = () => {
             >
               View Cart
             </button>
-            <button className="w-full border border-red-600 text-red-500 hover:bg-red-600 hover:text-white transition py-3 font-bold uppercase tracking-wide">
+            <button
+              onClick={() => { setIsCartOpen(false); navigate('/checkout') }}
+              className="w-full border border-red-600 text-red-500 hover:bg-red-600 hover:text-white transition py-3 font-bold uppercase tracking-wide"
+            >
               Checkout
             </button>
             <button onClick={clearCart} className="text-white/40 hover:text-white text-sm text-center transition">
